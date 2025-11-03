@@ -1,0 +1,422 @@
+/* Variables para la nueva paleta de colores y tipografía */
+:root {
+    --bg-color: #F4E9CD; /* Crema claro */
+    --primary-text-color: #031926; /* Azul Noche Profundo */
+    --secondary-color: #468189; /* Verde Azulado Metálico */
+    --accent-color: #77ACA2; /* Verde Mar Suave */
+    --card-bg-color: #FFFFFF; /* Blanco para tarjetas */
+    --border-color: #9DEBBB; /* Opalo Suave para bordes sutiles */
+
+    --font-family-primary: 'Arial', sans-serif; /* Usaremos 'Inter' o 'Roboto' si los cargamos */
+    --font-family-headings: 'Arial', sans-serif; 
+    
+    --max-width: 1200px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+}
+
+/* Base */
+body {
+    font-family: var(--font-family-primary);
+    color: var(--primary-text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-family-headings);
+    color: var(--primary-text-color);
+    margin-top: 0;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.2em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.4em; }
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+.main-header {
+    background-color: var(--card-bg-color);
+    padding: var(--spacing-md) var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+/* Se eliminan los estilos de la foto del encabezado */
+/* .profile-photo-container { ... } */
+/* .profile-photo { ... } */
+
+.main-header h1 {
+    font-size: 1.5em;
+    margin-bottom: 0;
+}
+
+.main-header .subtitle {
+    font-size: 0.9em;
+    color: var(--primary-text-color);
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* Navegación - Desktop */
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.nav-links a {
+    color: var(--primary-text-color);
+    font-weight: bold;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--secondary-color);
+}
+
+/* Botón Hamburguesa - Oculto en Desktop */
+.hamburger-menu {
+    display: none; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    z-index: 1000;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-text-color);
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+.hamburger-menu span:last-child { margin-bottom: 0; }
+
+/* ================================== */
+/* Layout principal con Grid (¡CRÍTICO!)*/
+/* ================================== */
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 300px; /* Contenido principal y barra lateral */
+    gap: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+}
+
+.main-content {
+    background-color: var(--card-bg-color);
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.sidebar {
+    background-color: var(--card-bg-color);
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Secciones de Contenido */
+section {
+    margin-bottom: var(--spacing-lg);
+}
+
+/* NUEVOS ESTILOS PARA LA FOTO GRANDE EN LA SECCIÓN HERO */
+.hero-photo-container {
+    width: 180px; /* Tamaño más grande para la foto */
+    height: 180px;
+    border-radius: 50%; /* Circular */
+    overflow: hidden;
+    margin: 0 auto var(--spacing-md) auto; /* Centrar y añadir margen inferior */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--secondary-color); /* Borde de acento más notorio */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra sutil */
+}
+
+.hero-profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+#hero-intro .tagline {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+    text-align: center; /* Centrar el texto de la intro */
+}
+#hero-intro .tagline-sub {
+    font-style: italic;
+    color: var(--primary-text-color);
+    opacity: 0.7;
+    margin-top: 0;
+    text-align: center; /* Centrar el texto de la intro */
+}
+#hero-intro h2 {
+    text-align: center; /* Centrar el saludo */
+}
+.contact-links {
+    text-align: center; /* Centrar los enlaces de contacto */
+    margin-bottom: var(--spacing-md);
+}
+
+
+/* Tarjetas de Proyecto */
+.project-card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.tech-tags span {
+    display: inline-block;
+    background-color: var(--bg-color); 
+    color: var(--primary-text-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: var(--spacing-md);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn.primary-btn {
+    background-color: var(--secondary-color);
+    color: var(--card-bg-color);
+    margin-right: 10px;
+}
+.btn.primary-btn:hover {
+    background-color: #3f7077; 
+}
+
+.btn.secondary-btn {
+    background-color: var(--accent-color);
+    color: var(--card-bg-color);
+}
+.btn.secondary-btn:hover {
+    background-color: #6a9c94; 
+}
+
+/* Sidebar */
+.sidebar-block {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border-radius: 8px;
+}
+.sidebar-block h3 {
+    color: var(--primary-text-color);
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px;
+}
+.skill-list li {
+    font-size: 0.95em;
+}
+
+.lang-selector button {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--primary-text-color);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.lang-selector button.active,
+.lang-selector button:hover {
+    background-color: var(--secondary-color);
+    color: var(--card-bg-color);
+    border-color: var(--secondary-color);
+}
+
+.notes-block ol {
+    padding-left: var(--spacing-md);
+}
+.notes-block li {
+    margin-bottom: 8px;
+    color: var(--primary-text-color);
+    font-size: 0.9em;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: var(--spacing-md) 0;
+    margin-top: var(--spacing-lg);
+    font-size: 0.9em;
+    color: var(--primary-text-color);
+    opacity: 0.7;
+}
+
+
+/* ---------------------------------- */
+/* Responsive Design (30 pts)         */
+/* ---------------------------------- */
+
+@media (max-width: 992px) {
+    .content-wrapper {
+        grid-template-columns: 1fr; /* La barra lateral se apila debajo */
+        gap: var(--spacing-md);
+    }
+    .sidebar {
+        order: -1; /* Mueve la barra lateral arriba del contenido principal */
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        flex-wrap: wrap;
+        justify-content: center; 
+        padding-bottom: 10px;
+    }
+    .header-left {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: var(--spacing-md);
+    }
+    .main-nav {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end; 
+    }
+
+    /* Mostrar menú hamburguesa, ocultar nav links */
+    .hamburger-menu {
+        display: block;
+    }
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        background-color: var(--card-bg-color);
+        position: absolute;
+        top: 130px; /* Ajusta según la altura de tu header en móvil */
+        right: 0;
+        width: 100%;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        z-index: 999;
+        padding: var(--spacing-md) 0;
+    }
+    .nav-links.open {
+        display: flex; 
+    }
+    .nav-links li {
+        text-align: center;
+        margin: 10px 0;
+    }
+    .nav-links a {
+        padding: 10px 0;
+        display: block;
+    }
+
+    /* Animación del hamburguesa */
+    .hamburger-menu.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger-menu.open span:nth-child(2) { opacity: 0; }
+    .hamburger-menu.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .skill-list {
+        grid-template-columns: 1fr; 
+    }
+    /* En móvil, la foto grande puede ser un poco más pequeña */
+    .hero-photo-container {
+        width: 120px; 
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.5em; }
+    .main-header h1 { font-size: 1.2em; }
+    /* Eliminamos estos estilos ya que la foto no está en el encabezado */
+    /* .profile-photo-container {
+        width: 40px; 
+        height: 40px;
+    } */
+    .btn {
+        display: block; 
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .action-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+}

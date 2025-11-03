@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="title">Portafolio - Joana Lizet Osuna Hernandez</title>
+    <link rel="stylesheet" href="style/estilos.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-left">
+            <div>
+                <h1 data-lang-key="header_name">Joana Lizet Osuna Hernandez</h1>
+                <p class="subtitle" data-lang-key="header_title">Desarrolladora Web — Front-end</p>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <button class="hamburger-menu" aria-label="Abrir menú" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#about" data-lang-key="nav_home">Inicio</a></li>
+                <li><a href="#projects" data-lang-key="nav_projects">Proyectos</a></li>
+                <li><a href="#skills" data-lang-key="nav_skills">Habilidades</a></li>
+                <li><a href="#about-me" data-lang-key="nav_about">Sobre mí</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-wrapper container">
+        <main class="main-content">
+            <section id="hero-intro">
+                <div class="hero-photo-container">
+                    <img src="imagenes/img_cv.png" alt="Joana_Osuna" class="hero-profile-photo"/>
+                </div>
+                
+                <h2 data-lang-key="intro_greeting">Hola — soy Joana</h2>
+                <p class="tagline" data-lang-key="intro_role">Desarrolladora Front-End | HTML, CSS, JavaScript, SQL</p>
+                
+                <div class="contact-links">
+                    <a href="mailto:joanalizetosunahernandez@gmail.com">joanalizetosunahernandez@gmail.com</a> · 
+                    <a href="https://www.linkedin.com/in/joana-lizet-osuna-hernandez-8153ab397">LinkedIn</a> · 
+                    <a href="https://github.com/joanalizetosunahernandez-cmyk">GitHub</a>
+                </div>
+                <p data-lang-key="intro_main_desc">Diseño y desarrollo de interfaces accesibles y responsivas. Aquí encontrarás mis proyectos más relevantes, habilidades técnicas y mi CV descargable.</p>
+            </section>
+
+            <section id="projects">
+                <article class="project-card">
+                    <h3 data-lang-key="proj1_title">Proyecto: Sitio de Portafolio (Demo)</h3>
+                    <p data-lang-key="proj1_desc">Portafolio responsive creado con HTML/CSS y JavaScript. Implementa navegación accesible y animaciones sutiles.</p>
+                    <div class="tech-tags">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                    </div>
+                    <a href="#" class="btn" data-lang-key="proj_view_demo">Ver demo</a>
+                </article>
+
+                <article class="project-card">
+                    <h3 data-lang-key="proj2_title">Proyecto: App de Tareas (Demo)</h3>
+                    <p data-lang-key="proj2_desc">Aplicación sencilla para gestionar tareas con almacenamiento local, buena semántica y accesibilidad.</p>
+                    <div class="tech-tags">
+                        <span>HTML Semántico</span><span>LocalStorage</span><span>Pruebas básicas</span>
+                    </div>
+                    <a href="#" class="btn" data-lang-key="proj_view_code">Ver código</a>
+                </article>
+            </section>
+
+            <section class="action-buttons">
+                <a href="tu-cv.pdf" download class="btn primary-btn" data-lang-key="cv_download">Descargar CV (PDF)</a>
+                <a href="mailto:joanalizetosunahernandez@gmail.com" class="btn secondary-btn" data-lang-key="contact_me">Contactar</a>
+            </section>
+
+            <section id="about-me">
+                <h2 data-lang-key="about_me_title">Sobre mí</h2>
+                <p data-lang-key="about_me_desc">Soy estudiante / profesional en Tecnologías de la Información con interés en interfaces y experiencia de usuario. Me apasiona transformar diseños en páginas accesibles y optimizadas.</p>
+                <h3 data-lang-key="about_me_education_title">Formación</h3>
+                <p data-lang-key="about_me_education_desc">Licenciatura / Técnico en Desarrollo Web — Universidad / Escuela (Año)</p>
+            </section>
+        </main>
+
+        <aside class="sidebar">
+            <div class="sidebar-block">
+                <h3 data-lang-key="sidebar_skills_title">Habilidades</h3>
+                <ul class="skill-list">
+                    <li>HTML (Semántico)</li>
+                    <li>CSS / SASS</li>
+                    <li>Responsive Design</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>Git / GitHub</li>
+                    <li>Accesibilidad (a11y)</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-block">
+                <h3 data-lang-key="sidebar_certs_title">Certificaciones</h3>
+                <p data-lang-key="sidebar_certs_desc">Coloca aquí enlaces o imágenes de certificaciones.</p>
+            </div>
+
+            <div class="sidebar-block">
+                <h3 data-lang-key="sidebar_languages_title">Idiomas</h3>
+                <div class="lang-selector">
+                    <button onclick="setLang('es')" class="active">ES</button>
+                    <button onclick="setLang('en')">EN</button>
+                    <button onclick="setLang('fr')">FR</button>
+                </div>
+            </div>
+
+            <div class="sidebar-block">
+                <h3 data-lang-key="sidebar_contact_title">Contacto rápido</h3>
+                <p>Correo: <a href="mailto:tu.email@ejemplo.com">tu.email@ejemplo.com</a></p>
+                <p>Tel: +52 1 XX XXXX XXXX</p>
+            </div>
+
+             <div class="sidebar-block notes-block">
+                <h3 data-lang-key="sidebar_notes_title">Notas para entrega</h3>
+                <ol>
+                    <li data-lang-key="sidebar_note1">Incluye al menos 2 proyectos reales con enlaces activos.</li>
+                    <li data-lang-key="sidebar_note2">Sube tu CV como <code>cv.pdf</code> en la misma carpeta.</li>
+                    <li data-lang-key="sidebar_note3">Reemplaza las imágenes de perfil y enlaces sociales.</li>
+                </ol>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <p data-lang-key="footer_copyright">&copy; 2025 Joana Lizet Osuna Hernandez — Portafolio profesional</p>
+    </footer>
+
+    <script src="java/java.js" defer></script> 
+</body>
+</html>
